@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://test.ac.jp/ChronoSchema"
+	xmlns:my="http://test.ac.jp/ChronoSchema" 
+	xmlns:gml="http://www.opengis.net/gml/3.2" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://test.ac.jp/ChronoSchema"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified" >
+
+	<xs:annotation>
+		<xs:documentation>
+			編年参照系定義データ テスト用 XML Schema
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:import namespace="http://www.opengis.net/gml/3.2"
+		 schemaLocation="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19136_Schemas/gml.xsd"/>
+
+
+	<!--==== ルート要素定義(全体データセット用) ====-->
+	<xs:element name="ChronologicalDataSet" type="ChronologicalDataSetType" substitutionGroup="gml:AbstractGML"/>
+	<xs:complexType name="ChronologicalDataSetType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractGMLType">
+				<xs:sequence >
+					<xs:element ref="gml:AbstractGML" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- 編年集合体 -->
+	<xs:element name="ChronologicalSet" type="my:ChronologicalSetType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="ChronologicalSetType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence >
+					<xs:element name="system" type="my:ChronologicalReferenceSystemType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- 編年参照系 -->
+	<xs:element name="ChronologicalReferenceSystem" type="my:ChronologicalReferenceSystemType" substitutionGroup="gml:TimeOrdinalReferenceSystem"/>
+	<xs:complexType name="ChronologicalReferenceSystemType">
+		<xs:complexContent>
+			<xs:extension base="gml:TimeOrdinalReferenceSystemType">
+				<xs:sequence>
+					<xs:element name="locationName" type="xs:string" minOccurs="0"/>		<!-- 地域 -->
+					<xs:element name="remarks" type="xs:string" minOccurs="0"/>				<!-- 備考 -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- 編年要素 -->
+	<xs:element name="ChronologicalElement" type="my:ChronologicalElementType" substitutionGroup="gml:TimeOrdinalEra"/>
+	<xs:complexType name="ChronologicalElementType">
+		<xs:complexContent>
+			<xs:extension base="gml:TimeOrdinalEraType">
+				<xs:sequence>
+					<xs:element name="eventOfStart" type="xs:string" minOccurs="0"/>		<!-- 開始事象 -->
+					<xs:element name="termBegin" type="my:LooseTimePositionType" minOccurs="0"/>	<!-- 開始時期 -->
+					<xs:element name="termEnd" type="my:LooseTimePositionType" minOccurs="0"/>	<!-- 終了時期 -->
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<!-- 時期 -->
+	<xs:element name="LooseTimePosition" type="my:LooseTimePositionType"/>
+	<xs:complexType name="LooseTimePositionType">
+			<xs:choice>
+				<xs:element name="firmPosition" type="gml:TimeInstantType" minOccurs="0"/>					<!-- 確定時期 -->
+				<xs:element name="ambiguousPosition" type="my:AmbiguousTimePositionType" minOccurs="0"/>	<!-- 推定時期 -->
+			</xs:choice>
+	</xs:complexType>
+
+	<!-- 推定時期 -->
+	<xs:element name="AmbiguousTimePosition" type="my:AmbiguousTimePositionType"/>
+	<xs:complexType name="AmbiguousTimePositionType">
+			<xs:sequence>
+				<xs:element name="estimatedTimeElement" type="my:EstimatedTimeElementType" maxOccurs="unbounded"/>	<!-- 推定時期要素 -->
+				<xs:element name="estimationMethod" type="xs:string" minOccurs="0"/>				<!-- 時間推定法 -->
+			</xs:sequence>
+	</xs:complexType>
+
+	<!-- 推定時期要素 -->
+	<xs:element name="EstimatedTimeElement" type="my:EstimatedTimeElementType"/>
+	<xs:complexType name="EstimatedTimeElementType">
+			<xs:sequence>
+				<xs:element name="instant" type="gml:TimeInstantType"/>										<!-- 時期 -->
+				<xs:element name="timePartModifier" type="my:TimePartModifierType" minOccurs="0"/>	<!-- 時期修飾子 -->
+				<xs:element name="accuracyRate" type="xs:float" minOccurs="0"/>								<!-- 推定確度 -->
+			</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- 時期修飾子 -->
+	<xs:element name="TimePartModifier" type="my:TimePartModifierType"/>
+	<xs:complexType name="TimePartModifierType">
+			<xs:sequence>
+				<xs:element name="nounPhrase" type="xs:string" minOccurs="0"/>			<!-- 名詞表現 -->
+				<xs:element name="functionPhrase" type="xs:string" minOccurs="0"/>		<!-- 関数表現 -->
+				<xs:element name="description" type="xs:string" minOccurs="0"/>			<!-- 説明 -->
+			</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema>

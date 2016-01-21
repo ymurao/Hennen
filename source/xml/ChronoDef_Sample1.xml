@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ChronologicalDataSet xsi:schemaLocation="http://test.ac.jp/ChronoSchema ChronoSchema.xsd" 
+	xmlns:gml="http://www.opengis.net/gml/3.2" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns="http://test.ac.jp/ChronoSchema"
+    gml:id="SampleDataset1">
+
+	<gml:description>編年参照系定義データ( CEDD:Chronological Element Description Document ) 作成テスト</gml:description>
+	<gml:name>日本史年代区分の定義例</gml:name>
+
+
+<ChronologicalSet gml:id="AA">
+
+	<!-- 編年参照系  世紀 -->
+
+
+	<!-- 編年参照系  日本史時代区分 -->
+	<system gml:id="AA001">
+		<gml:description/>
+		<gml:identifier codeSpace="url:nabunken.go.jp">Chronological Table</gml:identifier>
+		<gml:name>日本史時代区分</gml:name>
+		<gml:domainOfValidity></gml:domainOfValidity>
+
+		<!-- 編年要素 -->
+		<!-- ChronologicalElement -->
+		<gml:component>
+			<ChronologicalElement gml:id="AA00101">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>縄文時代</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00101a">
+								<gml:timePosition>14000年前</gml:timePosition>
+							</instant>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termBegin>
+				<termEnd>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00101b">
+								<gml:timePosition>紀元前6世紀</gml:timePosition>
+							</instant>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00102">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>x弥生時代</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00102a">
+								<gml:timePosition>紀元前6世紀</gml:timePosition>
+							</instant>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termBegin>
+				<termEnd>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00102b">
+								<gml:timePosition>3世紀</gml:timePosition>
+							</instant>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00103">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>古墳時代</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00103a">
+								<gml:timePosition>3世紀</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>後半</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.5, 0.5, 0.0)</functionPhrase>
+								<description>世紀の後部50%の範囲</description>
+							</timePartModifier>
+							<accuracyRate>0.67</accuracyRate>
+						</estimatedTimeElement>
+						<estimatedTimeElement>
+							<instant gml:id="AA00103b">
+								<gml:timePosition>4世紀</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>初</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.0, 0.15, 0.85)</functionPhrase>
+								<description>世紀初頭15%の範囲</description>
+							</timePartModifier>
+							<accuracyRate>0.33</accuracyRate>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termBegin>
+				<termEnd>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00103c">
+								<gml:timePosition>7世紀</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>前半</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.0, 0.50, 0.50)</functionPhrase>
+								<description>世紀の前部50%の範囲</description>
+							</timePartModifier>
+						</estimatedTimeElement>
+						<estimatedTimeElement>
+							<instant gml:id="AA00103d">
+								<gml:timePosition>8世紀</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>初</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.0, 0.15, 0.85)</functionPhrase>
+								<description>世紀初頭15%の範囲</description>
+							</timePartModifier>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00104">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>飛鳥時代</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00104a">
+								<gml:timePosition>6世紀</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>末</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.85, 0.15, 0.0)</functionPhrase>
+								<description>世紀後部15%の範囲</description>
+							</timePartModifier>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00104b">
+						<gml:timePosition>710</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00105">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>奈良時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00105a">
+						<gml:timePosition>710</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00105b">
+						<gml:timePosition>794</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00106">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>平安時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00106a">
+						<gml:timePosition>794</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00106b">
+						<gml:timePosition>1185</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00107">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>鎌倉時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00107a">
+						<gml:timePosition>1185</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00107b">
+						<gml:timePosition>1333</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00108">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>建武の新政</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00108a">
+						<gml:timePosition>1333</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00108b">
+						<gml:timePosition>1335</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00109">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>室町時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00109a">
+						<gml:timePosition>1336</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00109b">
+						<gml:timePosition>1573</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00110">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>南北朝時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00110a">
+						<gml:timePosition>1336</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00110b">
+						<gml:timePosition>1392</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00111">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>戦国時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00111a">
+						<gml:timePosition>1493</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00111b">
+						<gml:timePosition>1573</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00112">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>安土桃山時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00112a">
+						<gml:timePosition>1573</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00112b">
+						<gml:timePosition>1603</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00113">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>江戸時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00113a">
+						<gml:timePosition>1603</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00113b">
+						<gml:timePosition>1868</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00121_Meiji">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>明治時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00121a">
+						<gml:timePosition>1868-01-25</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00121b">
+						<gml:timePosition>1912-07-30</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00122_Taisho">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C12</gml:identifier>
+				<gml:name>大正時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00122a">
+						<gml:timePosition>1912-08-01</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00122b">
+						<gml:timePosition>1926-12-25</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00123_Showa">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C13</gml:identifier>
+				<gml:name>昭和時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00123a">
+						<gml:timePosition>1926-12-26</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00123b">
+						<gml:timePosition>1989-01-07</gml:timePosition>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00124_Heisei">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C14</gml:identifier>
+				<gml:name>平成時代</gml:name>
+				<termBegin>
+					<firmPosition gml:id="AA00124a">
+						<gml:timePosition>1989-01-08</gml:timePosition>
+					</firmPosition>
+				</termBegin>
+				<termEnd>
+					<firmPosition gml:id="AA00124b">
+						<gml:timePosition indeterminatePosition="now"/>
+					</firmPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+	</system>
+
+	<system gml:id="AA002">
+		<gml:description/>
+		<gml:identifier codeSpace="url:nabunken.go.jp">Chronological Timeframe</gml:identifier>
+		<gml:name>編年定義例</gml:name>
+		<gml:domainOfValidity/>
+
+		<!-- 上記の編年要素を使った時間属性指定例（定義の際にも編年要素を利用している） -->
+		<gml:component>
+			<ChronologicalElement gml:id="AA00201">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>明治中期～大正初期</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00201a">
+								<!-- gml:timePosition frame="#AA00101_Meiji">明治</gml:timePosition -->
+								<gml:timePosition>明治</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>中期</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.3, 0.4, 0.3)</functionPhrase>
+								<description>明治時代中間前後40%の範囲</description>
+							</timePartModifier>
+						</estimatedTimeElement>
+
+						<estimationMethod></estimationMethod>
+					</ambiguousPosition>
+				</termBegin>
+				<termEnd>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00201b">
+								<gml:timePosition>大正</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>初期</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.0, 0.33, 0.67)</functionPhrase>
+								<description>大正時代最初から33%の範囲</description>
+							</timePartModifier>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termEnd>
+			</ChronologicalElement>
+		</gml:component>
+
+		<gml:component>
+			<ChronologicalElement gml:id="AA00202">
+				<gml:identifier codeSpace="url:nabunken.go.jp">C11</gml:identifier>
+				<gml:name>昭和初頭頃</gml:name>
+				<termBegin>
+					<ambiguousPosition>
+						<estimatedTimeElement>
+							<instant gml:id="AA00202a">
+								<gml:timePosition>大正</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>末期</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.8, 0.2, 0.0)</functionPhrase>
+								<description>大正時代最後の2～3年の範囲</description>
+							</timePartModifier>
+							<accuracyRate>0.2</accuracyRate>
+						</estimatedTimeElement>
+
+						<estimatedTimeElement>
+							<instant gml:id="AA00202b">
+								<gml:timePosition>昭和</gml:timePosition>
+							</instant>
+							<timePartModifier>
+								<nounPhrase>初期</nounPhrase>
+								<functionPhrase>sqwave(1.0, 0.0, 0.15, 0.85)</functionPhrase>
+								<description>昭和時代最初15%の範囲</description>
+							</timePartModifier>
+							<accuracyRate>0.8</accuracyRate>
+						</estimatedTimeElement>
+					</ambiguousPosition>
+				</termBegin>
+			</ChronologicalElement>
+		</gml:component>
+
+	</system>
+
+</ChronologicalSet>
+
+</ChronologicalDataSet>
