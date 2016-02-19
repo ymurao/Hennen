@@ -1,0 +1,16 @@
+
+1.ファイル ChronoDef_Sample1.xml において，編年要素として定義している日本史の時代区分の時代名および各時代の開始時期・終了時期は，
+  次の記述を引用しています。
+    WikiPedia 「日本史時代区分表」
+		参照URL：https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E5%8F%B2%E6%99%82%E4%BB%A3%E5%8C%BA%E5%88%86%E8%A1%A8
+		参照日：2016年1月20日
+
+2.ファイル ChronoDef_Sample1.xml および ChronoSchema.xsd において，次の文献を参照し対応するXMLスキーマ定義を引用しています。
+	ISO 19136 Geographic Information - Geography Markup Lanuage (GML) (2007-09-01)
+    W3C XLink, XML Linking Language (XLink) Version 1.0, W3C Recommendation (2001-06-27)
+    W3C XML, Extensible Markup Language (XML) 1.0 (Third Edition), W3C Recommendation (2004-02-04)
+    W3C XML Namespaces, Namespaces in XML, W3C Recommendation (1999-01-14)
+    W3C XML Schema Part 1, XML Schema Part 1: Structures, W3C Recommendation (2001-05-02)
+    W3C XML Schema Part 2, XML Schema Part 2: Datatypes, W3C Recommendation (2001-05-02)
+
+
